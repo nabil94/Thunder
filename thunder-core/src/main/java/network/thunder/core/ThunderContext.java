@@ -109,7 +109,7 @@ public class ThunderContext {
             paymentData.secret = secret;
             paymentData.timestampOpen = Tools.currentTime();
             paymentData.timestampRefund = Tools.currentTime() + route.size()
-                    * configuration.MAX_REFUND_DELAY * configuration.MAX_OVERLAY_REFUND;
+                    * configuration.getMAX_REFUND_DELAY() * configuration.MAX_OVERLAY_REFUND;
             paymentData.csvDelay = configuration.DEFAULT_REVOCATION_DELAY;
 
             paymentHelper.makePayment(paymentData);

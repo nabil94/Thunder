@@ -15,7 +15,7 @@ public class LNConfiguration {
 
     public int MIN_REFUND_DELAY = 1 * 60 * 60;
     public int DEFAULT_REFUND_DELAY = 3 * 60 * 60;
-    public int MAX_REFUND_DELAY = 12 * 60 * 60;
+    private int MAX_REFUND_DELAY = 12 * 60 * 60;
 
     public int MIN_OVERLAY_REFUND = 2;
     public int DEFAULT_OVERLAY_REFUND = 3;
@@ -30,4 +30,8 @@ public class LNConfiguration {
     public int getTimeToReduceWhenRelayingPayment () {
         return Tools.getRandom(DEFAULT_REFUND_DELAY * DEFAULT_OVERLAY_REFUND, MAX_REFUND_DELAY * MAX_OVERLAY_REFUND);
     }
+
+	public int getMAX_REFUND_DELAY() {
+		return MAX_REFUND_DELAY;
+	}
 }

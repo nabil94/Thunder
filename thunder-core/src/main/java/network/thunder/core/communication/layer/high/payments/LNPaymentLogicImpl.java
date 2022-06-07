@@ -266,7 +266,7 @@ public class LNPaymentLogicImpl implements LNPaymentLogic {
                 throw new LNPaymentException("Payment-Revocation delay not within allowed boundaries. Is: " + payment.csvDelay);
             }
             diff = payment.timestampRefund - payment.timestampOpen;
-            if (diff > configuration.MAX_OVERLAY_REFUND * configuration.MAX_REFUND_DELAY * OnionObject.MAX_HOPS) {
+            if (diff > configuration.MAX_OVERLAY_REFUND * configuration.getMAX_REFUND_DELAY() * OnionObject.MAX_HOPS) {
                 throw new LNPaymentException("Refund timeout is too large. Is: " + diff);
             }
             //TODO Think about how we can solve guessing here, about us being the final receiver..
